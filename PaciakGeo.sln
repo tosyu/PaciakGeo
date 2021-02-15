@@ -1,8 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.DB", "PaciakGeo.DB\PaciakGeo.DB.csproj", "{16AB660D-A168-4573-9654-C053F5CDE5CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.DB.Docker", "PaciakGeo.DB.Docker\PaciakGeo.DB.Docker.csproj", "{AFA11FB9-4AD7-4D72-AC85-CF18BBEFB548}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16AB660D-A168-4573-9654-C053F5CDE5CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AB660D-A168-4573-9654-C053F5CDE5CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA11FB9-4AD7-4D72-AC85-CF18BBEFB548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA11FB9-4AD7-4D72-AC85-CF18BBEFB548}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal
