@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  paciak-geo-db:
+    env_file: ../PaciakGeo.DB/Environments/Production/postgres.env
+    volumes:
+      - ../PaciakGeo.DB/bin:/var/lib/postgresql/data
+      - ../PaciakGeo.DB/Environments/Production/create_user.sql:/docker-entrypoint-initdb.d/create_user.sql
+    networks:
+      - paciak-geo-database
+  flyway-paciak-geo:
+    volumes:
+      - ../PaciakGeo.DB/Migrations:/flyway/sql
+      - ../PaciakGeo.DB/Environments/Production/flyway.conf:/flyway/conf/flyway.conf
