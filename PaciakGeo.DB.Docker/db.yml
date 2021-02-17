@@ -15,19 +15,6 @@ services:
       - ../PaciakGeo.DB/Environments/Localhost/create_user.sql:/docker-entrypoint-initdb.d/create_user.sql
     networks:
       - paciak-geo-database
-  flyway-paciak-geo:
-    image: flyway/flyway:latest
-    container_name: flyway-paciak-geo
-    depends_on:
-      - paciak-geo-db
-    environment:
-      FLYWAY_EDITION: community
-    volumes:
-      - ../PaciakGeo.DB/Migrations:/flyway/sql
-      - ../PaciakGeo.DB/Environments/Localhost/flyway.conf:/flyway/conf/flyway.conf
-    command: migrate
-    networks:
-      - paciak-geo-database
 networks:
   paciak-geo-database:
     name: paciak-geo-database

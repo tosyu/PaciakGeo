@@ -1,5 +1,10 @@
 !/PaciakGeo.DB/Environments/Example
 /PaciakGeo.DB/Environments/Localhost
 /PaciakGeo.DB/Environments/Production
-**/obj/*
-**/bin/*
+
+obj
+bin
+
+appsettings.Development.json
+appsettings.Staging.json
+appsettings.Production.json

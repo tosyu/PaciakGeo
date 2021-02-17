@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  flyway-paciak-geo:
+    image: flyway/flyway:latest
+    container_name: flyway-paciak-geo
+    environment:
+      FLYWAY_EDITION: community
+    volumes:
+      - ../PaciakGeo.DB/Migrations:/flyway/sql
+      - ../PaciakGeo.DB/Environments/Localhost/flyway.conf:/flyway/conf/flyway.conf
+    command: migrate
+    networks:
+      - paciak-geo-database
+networks:
+  paciak-geo-database:
+    name: paciak-geo-database
