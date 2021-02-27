@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.DB.Docker", "Paci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.WebApi", "PaciakGeo.WebApi\PaciakGeo.WebApi.csproj", "{CEC1B2A6-E396-4421-B294-9A745115A9EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.Common", "PaciakGeo.Common\PaciakGeo.Common.csproj", "{3FB06726-9E24-4B02-BA63-0F95D7EA227F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.WebClient", "PaciakGeo.WebClient\PaciakGeo.WebClient.csproj", "{2D9552E0-3CCE-40C0-8DA7-57580E6F4DFA}"
 EndProject
 Global
@@ -24,10 +22,6 @@ Global
 		{CEC1B2A6-E396-4421-B294-9A745115A9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEC1B2A6-E396-4421-B294-9A745115A9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEC1B2A6-E396-4421-B294-9A745115A9EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FB06726-9E24-4B02-BA63-0F95D7EA227F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FB06726-9E24-4B02-BA63-0F95D7EA227F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FB06726-9E24-4B02-BA63-0F95D7EA227F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FB06726-9E24-4B02-BA63-0F95D7EA227F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D9552E0-3CCE-40C0-8DA7-57580E6F4DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D9552E0-3CCE-40C0-8DA7-57580E6F4DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D9552E0-3CCE-40C0-8DA7-57580E6F4DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
