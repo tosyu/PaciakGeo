@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using PaciakGeo.Common.Models.Dto;
+using PaciakGeo.WebApi.Models.ViewModels;
 
 namespace PaciakGeo.WebApi.Controllers
 {

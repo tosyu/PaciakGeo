@@ -1,4 +1,4 @@
-namespace PaciakGeo.Common.Models.Dto
+namespace PaciakGeo.WebApi.Models.ViewModels
 {
     public class UserTrackingDataDto
     {
