@@ -37,7 +37,11 @@ namespace PaciakGeo.WebApi.Controllers
                 var user = await userService.GetUserBySessionId(sessionId);
                 if (user != null)
                 {
-                    return Ok(new LoginResultDto {Token = userService.CreateJwtToken(user)});
+                    return Ok(new LoginResultDto
+                    {
+                        Token = userService.CreateJwtToken(user),
+                        User = user
+                    });
                 }
             }
 
