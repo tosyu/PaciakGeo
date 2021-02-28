@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace PaciakGeo.WebApi.Models.ViewModels
 {
-    public class PaciakUserDto
+    public class PaciakUser
     {
         [JsonPropertyName("uid")]
         public int Uid { get; set; }
@@ -14,5 +14,7 @@ namespace PaciakGeo.WebApi.Models.ViewModels
         public string Picture { get; set; }
         [JsonPropertyName("location")]
         public string Location { get; set; }
+
+        public LocationCoordinates Coordinates { get; set; }
     }
 }

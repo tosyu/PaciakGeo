@@ -8,6 +8,7 @@ namespace PaciakGeo.WebApi.Extensions
         public static IServiceCollection RegisterUserExtensions(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddTransient<IUserService, UserService>();
+            serviceCollection.AddTransient<IUsersService, UsersService>();
 
             return serviceCollection;
         }

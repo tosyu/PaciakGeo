@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PaciakGeo.WebApi.Extensions;
-using PaciakGeo.WebApi.Services;
 
 namespace PaciakGeo.WebApi
 {
@@ -24,6 +23,7 @@ namespace PaciakGeo.WebApi
             services.RegisterNodeBBExtensions(Configuration);
             services.RegisterUserExtensions();
             services.RegisterAuthenticationExtensions(Configuration);
+            services.RegisterLocationServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,8 +37,15 @@ namespace PaciakGeo.WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseAuthentication();
-            app.UseAuthorization();
+            if (Configuration.GetValue<bool>("UseAuthentication"))
+            {
+                app.UseAuthentication();
+            }
+
+            if (Configuration.GetValue<bool>("UseAuthorization"))
+            {
+                app.UseAuthorization();
+            }
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }

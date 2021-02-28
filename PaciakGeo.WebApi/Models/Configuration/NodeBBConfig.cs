@@ -4,5 +4,6 @@ namespace PaciakGeo.WebApi.Models.Configuration
     {
         public string ServiceUrl { get; set; }
         public string UserAgent { get; set; }
+        public string Token { get; set; }
     }
 }
