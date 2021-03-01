@@ -8,7 +8,7 @@ namespace PaciakGeo.WebApi.Controllers
     public class TrackingController : ControllerBase
     {
         [HttpPost]
-        public ActionResult Track([FromBody] UserTrackingDataDto userTrackingDataDto)
+        public ActionResult Track([FromBody] UserTrackingData userTrackingData)
         {
             return Ok();
         }

@@ -22,16 +22,16 @@ namespace PaciakGeo.WebApi.Services
             this.tokenOptions = tokenOptions;
         }
 
-        public async Task<PaciakUserDto> GetUserBySessionId(string sessionId)
+        public async Task<PaciakUser> GetUserBySessionId(string sessionId)
         {
             return await nodeBbRepository.GetUserBySessionId(sessionId);
         }
 
-        public string CreateJwtToken(PaciakUserDto paciakUser)
+        public string CreateJwtToken(PaciakUser paciakUser)
         {
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, paciakUser.Name),
+                new Claim(JwtRegisteredClaimNames.Sub, paciakUser.Slug),
                 new Claim(JwtRegisteredClaimNames.Jti, paciakUser.Uid.ToString())
             };
 

@@ -1,8 +1,8 @@
 namespace PaciakGeo.WebApi.Models.ViewModels
 {
-    public class LoginResultDto
+    public class LoginResult
     {
         public string Token { get; set; }
-        public PaciakUserDto User { get; set; }
+        public PaciakUser User { get; set; }
     }
 }

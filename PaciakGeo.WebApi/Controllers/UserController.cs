@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -7,7 +5,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.JsonWebTokens;
-using Microsoft.Net.Http.Headers;
 using PaciakGeo.WebApi.Models.Configuration;
 using PaciakGeo.WebApi.Models.ViewModels;
 using PaciakGeo.WebApi.Services;
@@ -37,7 +34,7 @@ namespace PaciakGeo.WebApi.Controllers
                 var user = await userService.GetUserBySessionId(sessionId);
                 if (user != null)
                 {
-                    return Ok(new LoginResultDto
+                    return Ok(new LoginResult
                     {
                         Token = userService.CreateJwtToken(user),
                         User = user
@@ -45,20 +42,20 @@ namespace PaciakGeo.WebApi.Controllers
                 }
             }
 
-            return StatusCode(403, new LoginFailedResultDto {RedirectUrl = tokenConfig.Value.IssuerLoginUrl});
+            return StatusCode(403, new LoginFailedResult {RedirectUrl = tokenConfig.Value.IssuerLoginUrl});
         }
         
         [HttpGet]
         [Authorize]
         [Route("me")]
-        public async Task<IActionResult> GetMe()
+        public IActionResult GetMe()
         {
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)
             {
-                var claims = identity.Claims;
-                var uid = claims.Where(c => c.Type == JwtRegisteredClaimNames.Jti).FirstOrDefault()?.Value;
-                var username = claims.Where(c => c.Type == JwtRegisteredClaimNames.Sub).FirstOrDefault()?.Value;
+                var claims = identity.Claims.ToList();
+                var uid = claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value;
+                var username = claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Sub)?.Value;
 
                 return Ok($"{uid}/{username}");
             }
