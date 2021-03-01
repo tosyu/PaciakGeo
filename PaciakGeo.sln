@@ -8,6 +8,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.WebApi", "PaciakG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.WebClient", "PaciakGeo.WebClient\PaciakGeo.WebClient.csproj", "{B86F2966-3EE9-465E-B4F7-EDC41F260EA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.Hangfire", "PaciakGeo.Hangfire\PaciakGeo.Hangfire.csproj", "{248A7D43-4338-4434-8614-12556CF2CEE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.Hangfire.Docker", "PaciakGeo.Hangfire.Docker\PaciakGeo.Hangfire.Docker.csproj", "{918394D3-1E9F-4EA1-9F58-997E70839CFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.WebApi.Docker", "PaciakGeo.WebApi.Docker\PaciakGeo.WebApi.Docker.csproj", "{C4312FAF-E163-4335-B688-49DEFDBEDF25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.WebClient.Docker", "PaciakGeo.WebClient.Docker\PaciakGeo.WebClient.Docker.csproj", "{BECE5576-73D6-438E-8FE8-7C4A246D00E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,5 +34,15 @@ Global
 		{B86F2966-3EE9-465E-B4F7-EDC41F260EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B86F2966-3EE9-465E-B4F7-EDC41F260EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B86F2966-3EE9-465E-B4F7-EDC41F260EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{248A7D43-4338-4434-8614-12556CF2CEE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{248A7D43-4338-4434-8614-12556CF2CEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{248A7D43-4338-4434-8614-12556CF2CEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{248A7D43-4338-4434-8614-12556CF2CEE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{918394D3-1E9F-4EA1-9F58-997E70839CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{918394D3-1E9F-4EA1-9F58-997E70839CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4312FAF-E163-4335-B688-49DEFDBEDF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4312FAF-E163-4335-B688-49DEFDBEDF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECE5576-73D6-438E-8FE8-7C4A246D00E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECE5576-73D6-438E-8FE8-7C4A246D00E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal
