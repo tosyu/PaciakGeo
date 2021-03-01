@@ -2,16 +2,16 @@ version: "3.7"
 services:
   paciak-geo-db:
     image: postgres:13.2
-    container_name: paciak-geo-db
-    env_file: ../PaciakGeo.DB/Environments/Localhost/postgres.env
+    container_name: paciak-geo-db-hangfire
+    env_file: ../PaciakGeo.DB/Environments/Localhost/postgres_hangfire.env
     environment:
       - POSTGRES_HOST_AUTH_METHOD=md5
-      - POSTGRES_DB=paciak_geo
+      - POSTGRES_DB=paciak_geo_hangfire
       - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
-      - 9876:5432
+      - 9877:5432
     volumes:
-      - ../PaciakGeo.DB/bin/paciak_geo_db:/var/lib/postgresql/data
+      - ../PaciakGeo.DB/bin/paciak_geo_db_hangfire:/var/lib/postgresql/data
     networks:
       - paciak-geo-database
 networks:
