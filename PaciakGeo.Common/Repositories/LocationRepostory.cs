@@ -2,10 +2,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Nominatim.API.Geocoders;
 using Nominatim.API.Models;
-using PaciakGeo.WebApi.Models;
-using PaciakGeo.WebApi.Models.ViewModels;
+using PaciakGeo.Common.Models;
 
-namespace PaciakGeo.WebApi.Repositories
+namespace PaciakGeo.Common.Repositories
 {
     public class LocationRepostory : ILocationRepository
     {

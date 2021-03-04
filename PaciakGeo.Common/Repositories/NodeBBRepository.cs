@@ -1,14 +1,13 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
-using PaciakGeo.WebApi.Models.Configuration;
-using PaciakGeo.WebApi.Models.ViewModels;
+using PaciakGeo.Common.Models;
+using PaciakGeo.Common.Models.Configuration;
 
-namespace PaciakGeo.WebApi.Repositories
+namespace PaciakGeo.Common.Repositories
 {
     public class NodeBBRepository : INodeBBRepository
     {

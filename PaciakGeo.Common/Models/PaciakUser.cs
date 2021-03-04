@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace PaciakGeo.WebApi.Models.ViewModels
+namespace PaciakGeo.Common.Models
 {
     public class PaciakUser
     {

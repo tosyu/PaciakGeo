@@ -3,10 +3,10 @@ using System.Net.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using PaciakGeo.WebApi.Models.Configuration;
-using PaciakGeo.WebApi.Repositories;
+using PaciakGeo.Common.Models.Configuration;
+using PaciakGeo.Common.Repositories;
 
-namespace PaciakGeo.WebApi.Extensions
+namespace PaciakGeo.Common.Extensions
 {
     public static class NodeBBExtensions
     {
@@ -22,7 +22,7 @@ namespace PaciakGeo.WebApi.Extensions
                     client.BaseAddress = new Uri(options.Value.ServiceUrl);
                     client.DefaultRequestHeaders.UserAgent.ParseAdd(options.Value.UserAgent);
                 })
-                .ConfigurePrimaryHttpMessageHandler(_ => new HttpClientHandler()
+                .ConfigurePrimaryHttpMessageHandler(_ => new HttpClientHandler
                 {
                     UseCookies = false
                 });

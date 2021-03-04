@@ -1,8 +1,7 @@
 using System.Threading.Tasks;
-using PaciakGeo.WebApi.Models;
-using PaciakGeo.WebApi.Models.ViewModels;
+using PaciakGeo.Common.Models;
 
-namespace PaciakGeo.WebApi.Repositories
+namespace PaciakGeo.Common.Repositories
 {
     public interface ILocationRepository
     {

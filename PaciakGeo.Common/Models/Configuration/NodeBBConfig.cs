@@ -1,4 +1,4 @@
-namespace PaciakGeo.WebApi.Models.Configuration
+namespace PaciakGeo.Common.Models.Configuration
 {
     public class NodeBBConfig
     {

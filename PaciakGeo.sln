@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.WebApi.Docker", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.WebClient.Docker", "PaciakGeo.WebClient.Docker\PaciakGeo.WebClient.Docker.csproj", "{BECE5576-73D6-438E-8FE8-7C4A246D00E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaciakGeo.Common", "PaciakGeo.Common\PaciakGeo.Common.csproj", "{E7E09900-E109-4291-BC6B-71FABDDE31FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,9 @@ Global
 		{C4312FAF-E163-4335-B688-49DEFDBEDF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BECE5576-73D6-438E-8FE8-7C4A246D00E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BECE5576-73D6-438E-8FE8-7C4A246D00E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E09900-E109-4291-BC6B-71FABDDE31FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7E09900-E109-4291-BC6B-71FABDDE31FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7E09900-E109-4291-BC6B-71FABDDE31FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E09900-E109-4291-BC6B-71FABDDE31FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

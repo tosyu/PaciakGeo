@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-using PaciakGeo.WebApi.Repositories;
+using PaciakGeo.Common.Repositories;
 
-namespace PaciakGeo.WebApi.Extensions
+namespace PaciakGeo.Common.Extensions
 {
     public static class LocationExtensions
     {

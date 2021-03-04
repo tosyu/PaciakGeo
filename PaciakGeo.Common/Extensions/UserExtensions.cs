@@ -1,7 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
+using PaciakGeo.Common.Services;
 using PaciakGeo.WebApi.Services;
 
-namespace PaciakGeo.WebApi.Extensions
+namespace PaciakGeo.Common.Extensions
 {
     public static class UserExtensions
     {

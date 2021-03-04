@@ -16,11 +16,13 @@ namespace PaciakGeo.WebApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService userService;
+        private readonly IJwtService jwtService;
         private readonly IOptions<JwtTokenConfig> tokenConfig;
 
-        public UserController(IUserService userService, IOptions<JwtTokenConfig> tokenConfig)
+        public UserController(IUserService userService, IJwtService jwtService, IOptions<JwtTokenConfig> tokenConfig)
         {
             this.userService = userService;
+            this.jwtService = jwtService;
             this.tokenConfig = tokenConfig;
         }
         
@@ -36,7 +38,7 @@ namespace PaciakGeo.WebApi.Controllers
                 {
                     return Ok(new LoginResult
                     {
-                        Token = userService.CreateJwtToken(user),
+                        Token = jwtService.CreateJwtToken(user),
                         User = user
                     });
                 }

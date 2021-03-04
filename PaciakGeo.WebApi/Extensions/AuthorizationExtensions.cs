@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using PaciakGeo.WebApi.Models.Configuration;
+using PaciakGeo.WebApi.Services;
 
 namespace PaciakGeo.WebApi.Extensions
 {
@@ -31,6 +32,7 @@ namespace PaciakGeo.WebApi.Extensions
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Value.SecretKey)),
                 };
             });
+            serviceCollection.AddTransient<IJwtService, JwtService>();
 
             return serviceCollection;
         }

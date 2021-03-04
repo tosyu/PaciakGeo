@@ -2,29 +2,21 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using PaciakGeo.Common.Models;
 using PaciakGeo.WebApi.Models.Configuration;
 using PaciakGeo.WebApi.Models.ViewModels;
-using PaciakGeo.WebApi.Repositories;
 
 namespace PaciakGeo.WebApi.Services
 {
-    public class UserService : IUserService
+    public class JwtService : IJwtService
     {
-        private readonly INodeBBRepository nodeBbRepository;
         private readonly IOptions<JwtTokenConfig> tokenOptions;
 
-        public UserService(INodeBBRepository nodeBbRepository, IOptions<JwtTokenConfig> tokenOptions)
+        public JwtService(IOptions<JwtTokenConfig> tokenOptions)
         {
-            this.nodeBbRepository = nodeBbRepository;
             this.tokenOptions = tokenOptions;
-        }
-
-        public async Task<PaciakUser> GetUserBySessionId(string sessionId)
-        {
-            return await nodeBbRepository.GetUserBySessionId(sessionId);
         }
 
         public string CreateJwtToken(PaciakUser paciakUser)

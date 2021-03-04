@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using PaciakGeo.WebApi.Models.ViewModels;
+using PaciakGeo.Common.Models;
 
 namespace PaciakGeo.WebApi.Services
 {

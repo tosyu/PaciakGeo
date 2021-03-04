@@ -1,11 +1,10 @@
-using System.Threading.Tasks;
+using PaciakGeo.Common.Models;
 using PaciakGeo.WebApi.Models.ViewModels;
 
 namespace PaciakGeo.WebApi.Services
 {
-    public interface IUserService
+    public interface IJwtService
     {
-        Task<PaciakUser> GetUserBySessionId(string sessionId);
         string CreateJwtToken(PaciakUser paciakUser);
     }
 }
