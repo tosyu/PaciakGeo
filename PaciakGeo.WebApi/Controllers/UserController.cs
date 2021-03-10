@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.JsonWebTokens;
+using PaciakGeo.Common.Services;
 using PaciakGeo.WebApi.Models.Configuration;
 using PaciakGeo.WebApi.Models.ViewModels;
 using PaciakGeo.WebApi.Services;
@@ -15,13 +16,13 @@ namespace PaciakGeo.WebApi.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly IUserService userService;
+        private readonly INodeBBUserService nodeBbUserService;
         private readonly IJwtService jwtService;
         private readonly IOptions<JwtTokenConfig> tokenConfig;
 
-        public UserController(IUserService userService, IJwtService jwtService, IOptions<JwtTokenConfig> tokenConfig)
+        public UserController(INodeBBUserService nodeBbUserService, IJwtService jwtService, IOptions<JwtTokenConfig> tokenConfig)
         {
-            this.userService = userService;
+            this.nodeBbUserService = nodeBbUserService;
             this.jwtService = jwtService;
             this.tokenConfig = tokenConfig;
         }
@@ -33,7 +34,7 @@ namespace PaciakGeo.WebApi.Controllers
         {
             if (Request.Cookies.TryGetValue("express.sid", out string sessionId))
             {
-                var user = await userService.GetUserBySessionId(sessionId);
+                var user = await nodeBbUserService.GetUserBySessionId(sessionId);
                 if (user != null)
                 {
                     return Ok(new LoginResult

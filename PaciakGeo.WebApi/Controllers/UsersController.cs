@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PaciakGeo.Common.Services;
 using PaciakGeo.WebApi.Services;
 
 namespace PaciakGeo.WebApi.Controllers
@@ -8,18 +9,18 @@ namespace PaciakGeo.WebApi.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly IUsersService usersService;
+        private readonly INodeBBUsersService nodeBbUsersService;
 
-        public UsersController(IUsersService usersService)
+        public UsersController(INodeBBUsersService nodeBbUsersService)
         {
-            this.usersService = usersService;
+            this.nodeBbUsersService = nodeBbUsersService;
         }
 
         [HttpGet]
         [Route("getUsers")]
         public async Task<IActionResult> GetUsers()
         {
-            return Ok(await usersService.GetUsers());
+            return Ok(await nodeBbUsersService.GetUsers());
         }
     }
 }

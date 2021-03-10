@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  paciak-geo-db:
+  paciak-geo-db-hangfire:
     image: postgres:13.2
     container_name: paciak-geo-db-hangfire
     env_file: ../PaciakGeo.DB/Environments/Localhost/postgres_hangfire.env

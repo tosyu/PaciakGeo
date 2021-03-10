@@ -1,22 +1,39 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using PaciakGeo.Common.Models;
 using PaciakGeo.Common.Repositories;
-using PaciakGeo.WebApi.Services;
 
 namespace PaciakGeo.Common.Services
 {
     public class UserService : IUserService
     {
-        private readonly INodeBBRepository nodeBbRepository;
+        private readonly ILogger<UserService> logger;
+        private readonly IUserRepository userRepository;
+        private readonly ILocationRepository locationRepository;
 
-        public UserService(INodeBBRepository nodeBbRepository)
+        public UserService(ILogger<UserService> logger, IUserRepository userRepository, ILocationRepository locationRepository)
         {
-            this.nodeBbRepository = nodeBbRepository;
+            this.logger = logger;
+            this.userRepository = userRepository;
+            this.locationRepository = locationRepository;
+        }
+        
+        public async Task<IEnumerable<User>> GetUsersForLocationUpdate(int? limit)
+        {
+            return await userRepository.GetUsersForLocationUpdate(limit);
         }
 
-        public async Task<PaciakUser> GetUserBySessionId(string sessionId)
+        public async Task<bool> UpdateUserLocationCoordinates(User user)
         {
-            return await nodeBbRepository.GetUserBySessionId(sessionId);
+            logger.LogDebug($"Updating user {user.Uid} location");
+
+            var coords = await locationRepository.FindLocationCoordinates(user.Location);
+
+            user.LocationLatitude = coords.Latitude;
+            user.LocationLongitude = coords.Longitude;
+
+            return await userRepository.Upsert(user);
         }
     }
 }

@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using PaciakGeo.Common.Models;
 
-namespace PaciakGeo.WebApi.Services
+namespace PaciakGeo.Common.Services
 {
     public interface IUserService
     {
-        Task<PaciakUser> GetUserBySessionId(string sessionId);
+        Task<IEnumerable<User>> GetUsersForLocationUpdate(int? limit);
+        Task<bool> UpdateUserLocationCoordinates(User user);
     }
 }

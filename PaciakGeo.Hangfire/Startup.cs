@@ -36,10 +36,12 @@ namespace PaciakGeo.Hangfire
                 options.ServerName = "PaciakGeo.Hangfire";
             });
             services.AddMvc();
-            services.RegisterJobs(Configuration);
             services.RegisterNodeBBExtensions(Configuration);
             services.RegisterUserExtensions();
             services.RegisterLocationServices();
+            services.RegisterNpgsqlExtensions();
+            
+            services.RegisterJobs(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

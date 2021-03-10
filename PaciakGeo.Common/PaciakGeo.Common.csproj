@@ -17,9 +17,11 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.0.78" />
       <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0-preview.1.21102.12" />
       <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0-preview.1.21102.12" />
       <PackageReference Include="Nominatim.API" Version="1.6.0" />
+      <PackageReference Include="Npgsql" Version="5.0.3" />
       <PackageReference Include="System.Net.Http" Version="4.3.4" />
     </ItemGroup>
 

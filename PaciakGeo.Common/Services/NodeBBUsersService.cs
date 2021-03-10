@@ -1,18 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using PaciakGeo.Common.Models;
 using PaciakGeo.Common.Repositories;
+using PaciakGeo.Common.Services;
 
 namespace PaciakGeo.WebApi.Services
 {
-    public class UsersService : IUsersService
+    public class NodeBBUsersService : INodeBBUsersService
     {
         private readonly INodeBBRepository repository;
         private readonly ILocationRepository locationRepository;
 
-        public UsersService(INodeBBRepository repository, ILocationRepository locationRepository)
+        public NodeBBUsersService(INodeBBRepository repository, ILocationRepository locationRepository)
         {
             this.repository = repository;
             this.locationRepository = locationRepository;
@@ -22,16 +22,9 @@ namespace PaciakGeo.WebApi.Services
         {
             var users = await repository.GetUsers();
             var usersWithLocation = (await repository.GetUsers(users.Select(user => user.Slug).ToArray()))
-                .Where(p => !string.IsNullOrEmpty(p.Location)).ToList();
-            var usersWithCoordinates = await Task.WhenAll(usersWithLocation.Select(GetCoordinates));
+                .Where(p => !string.IsNullOrEmpty(p.Location));
 
-            return usersWithCoordinates.ToList();
-        }
-        
-        private async Task<PaciakUser> GetCoordinates(PaciakUser user)
-        {
-            user.Coordinates = await locationRepository.FindLocationCoordinates(user.Location);
-            return user;
+            return usersWithLocation.ToList();
         }
     }
 }

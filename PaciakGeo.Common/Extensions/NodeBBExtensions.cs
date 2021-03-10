@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using PaciakGeo.Common.Models.Configuration;
 using PaciakGeo.Common.Repositories;
+using PaciakGeo.Common.Services;
+using PaciakGeo.WebApi.Services;
 
 namespace PaciakGeo.Common.Extensions
 {
@@ -26,6 +28,9 @@ namespace PaciakGeo.Common.Extensions
                 {
                     UseCookies = false
                 });
+            
+            serviceCollection.AddTransient<INodeBBUserService, NodeBBUserService>();
+            serviceCollection.AddTransient<INodeBBUsersService, NodeBBUsersService>();
             
             return serviceCollection;
         }

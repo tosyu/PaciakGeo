@@ -14,7 +14,5 @@ namespace PaciakGeo.Common.Models
         public string Picture { get; set; }
         [JsonPropertyName("location")]
         public string Location { get; set; }
-
-        public LocationCoordinates Coordinates { get; set; }
     }
 }
