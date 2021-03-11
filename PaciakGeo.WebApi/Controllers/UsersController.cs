@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using PaciakGeo.Common.Services;
-using PaciakGeo.WebApi.Services;
+using PaciakGeo.WebApi.Models.ViewModels;
 
 namespace PaciakGeo.WebApi.Controllers
 {
@@ -9,18 +11,21 @@ namespace PaciakGeo.WebApi.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly INodeBBUsersService nodeBbUsersService;
+        private readonly IUserService userService;
+        private readonly IMapper mapper;
 
-        public UsersController(INodeBBUsersService nodeBbUsersService)
+        public UsersController(IUserService userService, IMapper mapper)
         {
-            this.nodeBbUsersService = nodeBbUsersService;
+            this.userService = userService;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         [Route("getUsers")]
         public async Task<IActionResult> GetUsers()
         {
-            return Ok(await nodeBbUsersService.GetUsers());
+            var users = await userService.GetUsers();
+            return Ok(mapper.Map<IEnumerable<UserViewModel>>(users));
         }
     }
 }

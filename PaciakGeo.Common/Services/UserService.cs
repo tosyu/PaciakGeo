@@ -18,7 +18,12 @@ namespace PaciakGeo.Common.Services
             this.userRepository = userRepository;
             this.locationRepository = locationRepository;
         }
-        
+
+        public async Task<IEnumerable<User>> GetUsers()
+        {
+            return await userRepository.GetUsers();
+        }
+
         public async Task<IEnumerable<User>> GetUsersForLocationUpdate(int? limit)
         {
             return await userRepository.GetUsersForLocationUpdate(limit);

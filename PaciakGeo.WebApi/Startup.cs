@@ -22,9 +22,11 @@ namespace PaciakGeo.WebApi
         {
             services.AddControllers();
             services.RegisterNodeBBExtensions(Configuration);
+            services.RegisterNpgsqlExtensions();
             services.RegisterUserExtensions();
             services.RegisterAuthenticationExtensions(Configuration);
             services.RegisterLocationServices();
+            services.RegisterAutomapperProfiles();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
