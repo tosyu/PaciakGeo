@@ -1,0 +1,54 @@
+.leaflet-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.leaflet-marker-icon {
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 1px 1px #000000;
+}
+
+.map-loader {
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    z-index: 999;
+    top: calc(50% - 16px);
+    left: calc(50% - 16px);
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: transparent;
+    animation-name: loader-animation;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loader-animation {
+    0% {
+        border-color: transparent;
+        border-top-color: #f7ff00;
+        transform: scale(1);
+    }
+
+    25% {
+        border-color: transparent;
+        border-bottom-color: #00ffd9;
+        transform: scale(1.05);
+    }
+
+    50% {
+        border-color: transparent;
+        border-left-color: #7700ff;
+        transform: scale(1);
+    }
+
+    75% {
+        border-color: transparent;
+        transform: scale(1.1);
+        border-right-color: #ff0000;
+    }
+}
