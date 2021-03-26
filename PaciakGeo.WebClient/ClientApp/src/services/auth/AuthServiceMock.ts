@@ -1,6 +1,5 @@
 import IAuthService from "./IAuthService";
 import {injectable} from "inversify";
-import AuthorizationResult from "../../models/AuthorizationResult";
 import IBrowserService, {IBrowserServiceType} from "../browser/IBrowserService";
 import {resolve} from "../../ioc";
 
@@ -12,26 +11,19 @@ class AuthServiceMock implements IAuthService {
         this.browserService = resolve<IBrowserService>(IBrowserServiceType);
     }
 
-    getAuthorization(): Promise<AuthorizationResult> {
+    login(): Promise<boolean> {
         if (this.browserService.getFromLocalStorage("authorizedMock", "no") === "yes") {
-            return Promise.resolve({
-                success: true,
-                token: "1234567",
-                user: {
-                    name: "MockUser",
-                    location: "MockLocation",
-                    picture: "",
-                    slug: "mockuser",
-                    uid: -1
-                }
-            });
+            return Promise.resolve(true);
         }
 
         this.browserService.setToLocalStorage("authorizedMock", "yes");
-        return Promise.resolve({
-            success: false,
-            redirectUrl: `https://paciak.pl/login?returnTo=${this.browserService.encodeUri(this.browserService.getCurrentLocation())}`
-        });
+        this.browserService.redirectWindowAsync(`https://paciak.pl/login?returnTo=${this.browserService.encodeUri(this.browserService.getCurrentLocation())}`)
+
+        return Promise.resolve(false);
+    }
+
+    getToken(): string {
+        return this.browserService.getFromLocalStorage("authorizedMock", "no") === "no" ? null :"test-mock-token";
     }
 }
 

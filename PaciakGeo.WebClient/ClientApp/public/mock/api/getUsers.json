@@ -1,0 +1,16 @@
+[
+  {
+    "Uid": 0,
+    "Name": "test1",
+    "AvatarUrl": "https://www.gravatar.com/avatar/f5a492b2c0ec12f55f2a00879d7c12da?size=192&d=mm",
+    "LocationLongitude": 22.016143457294312,
+    "LocationLatitude": 50.013064
+  },
+  {
+    "Uid": 1,
+    "Name": "test2",
+    "AvatarUrl": "/assets/uploads/profile/427-profileavatar.png",
+    "LocationLongitude": 16.97819633051261,
+    "LocationLatitude": 51.1263106
+  }
+]

@@ -11,6 +11,10 @@ import {IAuthServiceType} from "./services/auth/IAuthService";
 import AuthService from "./services/auth/AuthService";
 import {BrowserService} from "./services/browser/BrowserService";
 import {IBrowserServiceType} from "./services/browser/IBrowserService";
+import LogService from "./services/log/LogService";
+import {ILogServiceType} from "./services/log/ILogService";
+import ReduxService from "./services/redux/ReduxService";
+import {IReduxServiceType} from "./services/redux/IReduxService";
 
 const container = new Container();
 
@@ -21,6 +25,8 @@ export function resolve<T>(identifier: interfaces.ServiceIdentifier<T>): T {
 container.bind<UserService>(IUserServiceType).to(UserService);
 container.bind<SettingsService>(ISettingsServiceType).to(SettingsService);
 container.bind<BrowserService>(IBrowserServiceType).to(BrowserService);
+container.bind<LogService>(ILogServiceType).to(LogService);
+container.bind<ReduxService>(IReduxServiceType).to(ReduxService);
 
 if (resolve<ISettingsService>(ISettingsServiceType).isDevelopment()) {
     container.bind<ApiServiceMock>(IApiServiceType).to(ApiServiceMock);

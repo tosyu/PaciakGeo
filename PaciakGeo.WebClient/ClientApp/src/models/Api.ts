@@ -1,3 +1,4 @@
 export enum Api {
-    GET_USERS = 'api/getusers'
+    GET_USERS = "/api/getUsers",
+    LOGIN = "/api/login"
 }

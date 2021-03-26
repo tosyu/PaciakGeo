@@ -1,7 +1,6 @@
-import AuthorizationResult from "../../models/AuthorizationResult";
-
 export default interface IAuthService {
-    getAuthorization(): Promise<AuthorizationResult>;
+    getToken(): string;
+    login(): Promise<boolean>;
 }
 
 export const IAuthServiceType = Symbol.for("IAuthService");

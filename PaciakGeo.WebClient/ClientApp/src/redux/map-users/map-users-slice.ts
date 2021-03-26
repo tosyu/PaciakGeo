@@ -23,5 +23,9 @@ export const mapUsersSlice = createSlice({
        builder.addCase(mapUsersActions.loadUsers.pending, (state) => {
            state.loading = LoadingState.Loading;
        });
+       
+       builder.addCase(mapUsersActions.loadUsers.rejected, (state) => {
+           state.loading = LoadingState.Idle
+       });
     }
 });

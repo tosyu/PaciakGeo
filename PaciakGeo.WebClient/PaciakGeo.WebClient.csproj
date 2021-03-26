@@ -16,6 +16,7 @@
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="ClientApp\public\mock\api\getUsers.json" />
         <Content Include="ClientApp\tsconfig.json" />
         <Content Include="ClientApp\tslint.json" />
         <None Remove="$(SpaRoot)**" />
